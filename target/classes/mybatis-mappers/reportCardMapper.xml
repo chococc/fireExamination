@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxbang.friday.dao.reportCardDao">
+    <sql id="where">
+        <where>
+            <if test="params != null">
+                <if test="params.userName != null and params.userName != ''">
+                    and userName = #{params.userName}
+                </if>
+                <if test="params.studentName != null and params.studentName != ''">
+                    and studentName = #{params.studentName}
+                </if>
+                <if test="params.testName != null and params.testName != ''">
+                    and testName = #{params.testName}
+                </if>
+                <if test="params.testDate != null and params.testDate != ''">
+                    and testDate = #{params.testDate}
+                </if>
+                <if test="params.testResult != null and params.testResult != ''">
+                    and testResult = #{params.testResult}
+                </if>
+            </if>
+        </where>
+    </sql>
+
+    <select id="getByID" resultType="reportCard">
+        select * from report_card t
+        where userName=#{testID}
+        limit #{offset}, #{limit}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(1) from report_card t
+        <include refid="where" />
+    </select>
+</mapper>

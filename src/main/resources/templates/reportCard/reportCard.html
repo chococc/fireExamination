@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩查询</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">reportCard</a>
+        <a>
+          <cite>成绩查询</cite></a>
+      </span>
+</div>
+<div class="layui-card-body ">
+	<form action="" method="post">
+</form>
+     <form class="layui-form  layui-col-space5">
+      	<div class="layui-inline layui-show-xs-block">
+      		<input type="text" id="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
+      	</div>
+      	<div class="layui-inline layui-show-xs-block">
+			<a class="layui-btn layui-btn-xs" onClick="xadmin.open('查询结果','/reportCard/'+document.getElementById('username').value+'?page=1&limit=10')">搜索</a>
+      	</div>
+      </form>
+</div> 
+<div class="x-body">
+
+    <table class="layui-hide" id="table" lay-filter="member"></table>
+
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="searchReoprtCard">查看</a>
+    </script>
+</div>
+</body>
+</html>

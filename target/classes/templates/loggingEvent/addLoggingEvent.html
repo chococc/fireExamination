@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>新增信息</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+    <div class="x-body">
+         <form class="layui-form">
+             <input id='hiddenId' type='hidden' th:value='${loggingEvent.timestmp}' name='timestmp' />		<div class='layui-form-item'>
+
+		<div class='layui-form-item'>
+				<label  for='formattedMessage'  class='layui-form-label'><span class='x-red'>*</span>formattedMessage</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.formattedMessage}' class='layui-input' placeholder='formattedMessage' type='text' name='formattedMessage' id='formattedMessage'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='loggerName'  class='layui-form-label'><span class='x-red'>*</span>loggerName</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.loggerName}' class='layui-input' placeholder='loggerName' type='text' name='loggerName' id='loggerName'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='levelString'  class='layui-form-label'><span class='x-red'>*</span>levelString</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.levelString}' class='layui-input' placeholder='levelString' type='text' name='levelString' id='levelString'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='threadName'  class='layui-form-label'><span class='x-red'>*</span>threadName</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.threadName}' class='layui-input' placeholder='threadName' type='text' name='threadName' id='threadName'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='referenceFlag'  class='layui-form-label'><span class='x-red'>*</span>referenceFlag</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.referenceFlag}' class='layui-input' placeholder='referenceFlag' type='text' name='referenceFlag' id='referenceFlag'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='arg0'  class='layui-form-label'><span class='x-red'>*</span>arg0</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.arg0}' class='layui-input' placeholder='arg0' type='text' name='arg0' id='arg0'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='arg1'  class='layui-form-label'><span class='x-red'>*</span>arg1</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.arg1}' class='layui-input' placeholder='arg1' type='text' name='arg1' id='arg1'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='arg2'  class='layui-form-label'><span class='x-red'>*</span>arg2</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.arg2}' class='layui-input' placeholder='arg2' type='text' name='arg2' id='arg2'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='arg3'  class='layui-form-label'><span class='x-red'>*</span>arg3</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.arg3}' class='layui-input' placeholder='arg3' type='text' name='arg3' id='arg3'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='callerFilename'  class='layui-form-label'><span class='x-red'>*</span>callerFilename</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.callerFilename}' class='layui-input' placeholder='callerFilename' type='text' name='callerFilename' id='callerFilename'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='callerClass'  class='layui-form-label'><span class='x-red'>*</span>callerClass</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.callerClass}' class='layui-input' placeholder='callerClass' type='text' name='callerClass' id='callerClass'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='callerMethod'  class='layui-form-label'><span class='x-red'>*</span>callerMethod</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.callerMethod}' class='layui-input' placeholder='callerMethod' type='text' name='callerMethod' id='callerMethod'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='callerLine'  class='layui-form-label'><span class='x-red'>*</span>callerLine</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.callerLine}' class='layui-input' placeholder='callerLine' type='text' name='callerLine' id='callerLine'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='eventId'  class='layui-form-label'><span class='x-red'>*</span>eventId</label>
+				<div class='layui-input-inline'>
+					<input th:value='${loggingEvent.eventId}' class='layui-input' placeholder='eventId' type='text' name='eventId' id='eventId'  lay-verify='required'>
+				</div>
+			</div>
+
+            <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  保存
+              </button>
+            </div>
+        </form>
+    </div>
+	<script type="text/javascript">
+		layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+                var form = layui.form
+                ,layer = layui.layer
+            //监听提交
+            form.on('submit(add)', function(data){
+                $.ajax({
+                    url:"/loggingEvents/add",
+                    type:"POST",
+                    data:data.field,
+                    dataType:'json',
+                    success:function(result){
+                        if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+                            layer.alert(result.msg);
+                        }else{
+                            layer.alert("设置成功", {icon: 6},function () {
+                               //关闭当前frame
+                                xadmin.close();
+                                // 可以对父窗口进行刷新
+                                xadmin.father_reload();
+                            });
+                        }
+                    }
+                });
+                return false;
+             });
+          });
+	</script>
+</body>
+</html>

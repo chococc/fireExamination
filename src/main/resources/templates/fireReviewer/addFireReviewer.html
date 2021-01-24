@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>新增信息</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+    <div class="x-body">
+         <form class="layui-form">
+             <input id='reviewerId' type='hidden' th:value='${fireReviewer.reviewerId}' name='reviewerId' />		<div class='layui-form-item'>
+
+		<div class='layui-form-item'>
+				<label  for='reviewerName'  class='layui-form-label'><span class='x-red'>*</span>考评员名字</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireReviewer.reviewerName}' class='layui-input' placeholder='reviewerName' type='text' name='reviewerName' id='reviewerName'  lay-verify='required'>
+				</div>
+			</div>
+
+			 <div class="layui-form-item">
+				 <label class="layui-form-label">性别</label>
+				 <div class="layui-input-inline">
+					 <select id="selectType" name="sex" lay-filter="sex" th:value="${fireReviewer.sex}" >
+						 <option value="男">男</option>
+						 <option value="女">女</option>
+					 </select>
+				 </div>
+
+			 </div>
+
+		<div class='layui-form-item'>
+				<label  for='age'  class='layui-form-label'><span class='x-red'>*</span>age</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireReviewer.age}' class='layui-input' placeholder='age' type='text' name='age' id='age'  lay-verify='required'>
+				</div>
+			</div>
+
+            <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  保存
+              </button>
+            </div>
+        </form>
+    </div>
+	<script type="text/javascript">
+		layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+                var form = layui.form
+                ,layer = layui.layer
+            //监听提交
+            form.on('submit(add)', function(data){
+            	debugger
+                $.ajax({
+                    url:"/fireReviewers/add",
+                    type:"POST",
+                    data:data.field,
+                    dataType:'json',
+                    success:function(result){
+                        if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+                            layer.alert(result.msg);
+                        }else{
+                            layer.alert("设置成功", {icon: 6},function () {
+								//关闭当前frame
+								xadmin.close();
+								// 可以对父窗口进行刷新
+								xadmin.father_reload();
+                            });
+                        }
+                    }
+                });
+                return false;
+             });
+          });
+	</script>
+</body>
+</html>

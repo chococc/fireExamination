@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>新增信息</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+    <div class="x-body">
+         <form class="layui-form">
+             <input id='hiddenId' type='hidden' th:value='${fireExamine.examineId}' name='examineId' />		<div class='layui-form-item'>
+
+			<!-- 考试id -->
+			 <div class="layui-form-item">
+				 <label class="layui-form-label">考试等级</label>
+				 <div class="layui-input-inline">
+					 <select id="level_id" name="levelId" lay-filter="type" th:value="${fireExamine.levelId}" > </select>
+				 </div>
+			 </div>
+
+
+		<div class='layui-form-item'>
+				<label  for='date'  class='layui-form-label'><span class='x-red'>*</span>考试日期</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireExamine.date}' class='layui-input' placeholder='date' type='text' name='date' id='date'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='startTime'  class='layui-form-label'><span class='x-red'>*</span>开始时间</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireExamine.startTime}' class='layui-input' placeholder='startTime' type='text' name='startTime' id='startTime'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+				<label  for='endTime'  class='layui-form-label'><span class='x-red'>*</span>结束时间</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireExamine.endTime}' class='layui-input' placeholder='endTime' type='text' name='endTime' id='endTime'  lay-verify='required'>
+				</div>
+			</div>
+		 <div class='layui-form-item'>
+				<label  for='number'  class='layui-form-label'><span class='x-red'>*</span>考试人数</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireExamine.number}' class='layui-input' placeholder='number' type='text' name='number' id='number'  lay-verify='required'>
+				</div>
+			</div>
+
+
+			 <!-- 考试id -->
+			 <div class="layui-form-item">
+				 <label class="layui-form-label">考试场地管理</label>
+				 <div class="layui-input-inline">
+					 <select id="examineRoomId" name="examineRoomId" lay-filter="type" th:value="${fireExamine.examineRoomId}" > </select>
+				 </div>
+			 </div>
+
+
+
+			 <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  保存
+              </button>
+            </div>
+        </form>
+    </div>
+	<script type="text/javascript">
+		layui.use(['form','layer','laydate'], function(){
+                $ = layui.jquery;
+                var form = layui.form,layer = layui.layer ,laydate = layui.laydate;
+
+
+			//日期
+			laydate.render({
+				elem: '#date'
+				,format: 'yyyy-MM-dd' //可任意组合
+			});
+
+			laydate.render({
+				elem: '#startTime'
+				,type: 'time'
+				,format: 'yyyy-MM-dd HH:mm:ss'
+			});
+			laydate.render({
+				elem: '#endTime'
+				,type: 'time'
+				,format: 'yyyy-MM-dd HH:mm:ss'
+			});
+
+
+
+
+			// 初始化
+				$.ajax({
+					url:"/fireLevels/list",
+					type:"POST",
+					data:{},
+					dataType:'json',
+					success:function(result){
+						if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+							layer.alert(result.msg);
+						}else{
+							console.log(result)
+							$.each(result.datas, function(index,val){
+								var options="<option value='"+val.levelId+"'>"+val.level+"</option>";
+								$("#level_id").append(options);
+							});
+							form.render();
+						}
+					}
+				});
+
+			// 初始化
+			$.ajax({
+				url:"/fireExamineRooms/list",
+				type:"POST",
+				data:{},
+				dataType:'json',
+				success:function(result){
+					if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+						layer.alert(result.msg);
+					}else{
+						console.log(result)
+						$.each(result.datas, function(index,val){
+							var options="<option value='"+val.examineRoomId+"'>"+val.examineRoomName+"</option>";
+							$("#examineRoomId").append(options);
+						});
+						form.render();
+					}
+				}
+			});
+
+
+
+            //监听提交
+            form.on('submit(add)', function(data){
+            	debugger
+                $.ajax({
+                    url:"/fireExamines/add",
+                    type:"POST",
+                    data:JSON.stringify(data.field),
+                    dataType:'json',
+					contentType: "application/json;charset=UTF-8",
+                    success:function(result){
+                        if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+                            layer.alert(result.msg);
+                        }else{
+                            layer.alert("设置成功", {icon: 6},function () {
+								//关闭当前frame
+								xadmin.close();
+								// 可以对父窗口进行刷新
+								xadmin.father_reload();
+                            });
+                        }
+                    }
+                });
+                return false;
+             });
+          });
+	</script>
+</body>
+</html>

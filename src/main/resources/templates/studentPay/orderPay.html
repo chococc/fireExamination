@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>新增信息</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+    <div class="x-body">
+         <form class="layui-form">
+             <input id='hiddenId' type='hidden' th:value='${fireOrder.orderId}' name='orderId' />		<div class='layui-form-item'>
+		       这是支付页面 。。。。。。。。。。。。。。。。。。
+
+
+            <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="payfinish" lay-submit="">
+                  支付完成
+              </button>
+            </div>
+        </form>
+    </div>
+	<script type="text/javascript">
+		layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+                var form = layui.form
+                ,layer = layui.layer
+            //监听提交
+            debugger
+            form.on('submit(payfinish)', function(data){
+            	var fields =data.field;
+                $.ajax({
+                    url:"/studentPays/payExamine/"+fields.orderId,
+                    type:"POST",
+                    data:{},
+                    dataType:'json',
+                    success:function(result){
+                        if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+                            layer.alert(result.msg);
+                        }else{
+                            layer.alert("支付完成", {icon: 6},function () {
+								//关闭当前frame
+								xadmin.close();
+								// 可以对父窗口进行刷新
+								xadmin.father_reload();
+                            });
+                        }
+                    }
+                });
+                return false;
+             });
+          });
+	</script>
+</body>
+</html>

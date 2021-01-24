@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxbang.friday.dao.FireExamineDao">
+
+	<sql id="where">
+		<where>
+			<if test="params != null">
+							<if test="params.examineId != null and params.examineId != ''">
+				and examine_id = #{params.examineId} 
+			</if>
+			<if test="params.levelId != null and params.levelId != ''">
+				and level_id = #{params.levelId} 
+			</if>
+			<if test="params.money != null and params.money != ''">
+				and money = #{params.money} 
+			</if>
+			<if test="params.date != null and params.date != ''">
+				and date = #{params.date} 
+			</if>
+			<if test="params.startTime != null and params.startTime != ''">
+				and start_time = #{params.startTime} 
+			</if>
+			<if test="params.endTime != null and params.endTime != ''">
+				and end_time = #{params.endTime} 
+			</if>
+			<if test="params.number != null and params.number != ''">
+				and number = #{params.number} 
+			</if>
+			<if test="params.orderNumber != null and params.orderNumber != ''">
+				and order_number = #{params.orderNumber} 
+			</if>
+			<if test="params.examineRoomId != null and params.examineRoomId != ''">
+				and examine_room_id = #{params.examineRoomId} 
+			</if>
+			<if test="params.status != null and params.status != ''">
+				and status = #{params.status} 
+			</if>
+
+			</if>
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from fire_examine t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="FireExamine">
+		select * from fire_examine t
+		<include refid="where" />
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update fire_examine t
+		<set>
+			<if test="examineId != null">
+				examine_id = #{examineId}, 
+			</if>
+			<if test="levelId != null">
+				level_id = #{levelId}, 
+			</if>
+			<if test="money != null">
+				money = #{money}, 
+			</if>
+			<if test="date != null">
+				date = #{date}, 
+			</if>
+			<if test="startTime != null">
+				start_time = #{startTime}, 
+			</if>
+			<if test="endTime != null">
+				end_time = #{endTime}, 
+			</if>
+			<if test="number != null">
+				number = #{number}, 
+			</if>
+			<if test="orderNumber != null">
+				order_number = #{orderNumber}, 
+			</if>
+			<if test="examineRoomId != null">
+				examine_room_id = #{examineRoomId}, 
+			</if>
+			<if test="status != null">
+				status = #{status}, 
+			</if>
+
+		</set>
+		where t.examine_id = #{examineId}
+	</update>
+
+</mapper>

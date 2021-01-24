@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>新增信息</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+    <div class="x-body">
+         <form class="layui-form">
+             <input id='hiddenId' type='hidden' th:value='${fireLevel.id}' name='id' />		<div class='layui-form-item'>
+		<div class='layui-form-item'>
+				<label  for='levelId'  class='layui-form-label'><span class='x-red'>*</span>levelId</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireLevel.levelId}' class='layui-input' placeholder='levelId' type='text' name='levelId' id='levelId'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+		<div class='layui-form-item'>
+				<label  for='level'  class='layui-form-label'><span class='x-red'>*</span>level</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireLevel.level}' class='layui-input' placeholder='level' type='text' name='level' id='level'  lay-verify='required'>
+				</div>
+			</div>
+		<div class='layui-form-item'>
+		<div class='layui-form-item'>
+				<label  for='money'  class='layui-form-label'><span class='x-red'>*</span>money</label>
+				<div class='layui-input-inline'>
+					<input th:value='${fireLevel.money}' class='layui-input' placeholder='money' type='text' name='money' id='money'  lay-verify='required'>
+				</div>
+			</div>
+
+            <div class="layui-form-item">
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  保存
+              </button>
+            </div>
+        </form>
+    </div>
+	<script type="text/javascript">
+		layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+                var form = layui.form
+                ,layer = layui.layer
+            //监听提交
+            form.on('submit(add)', function(data){
+                $.ajax({
+                    url:"/fireLevels/add",
+                    type:"POST",
+                    data:data.field,
+                    dataType:'json',
+                    success:function(result){
+                        if(result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102){
+                            layer.alert(result.msg);
+                        }else{
+                            layer.alert("设置成功", {icon: 6},function () {
+								//关闭当前frame
+								xadmin.close();
+								// 可以对父窗口进行刷新
+								xadmin.father_reload();
+                            });
+                        }
+                    }
+                });
+                return false;
+             });
+          });
+	</script>
+</body>
+</html>

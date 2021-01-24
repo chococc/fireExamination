@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxbang.friday.dao.FireManDao">
+
+	<sql id="where">
+		<where>
+			<if test="params != null">
+							<if test="params.examineUserid != null and params.examineUserid != ''">
+				and examine_userid = #{params.examineUserid} 
+			</if>
+			<if test="params.examineUsername != null and params.examineUsername != ''">
+				and examine_username = #{params.examineUsername} 
+			</if>
+			<if test="params.orgId != null and params.orgId != ''">
+				and org_id = #{params.orgId} 
+			</if>
+			<if test="params.levelId != null and params.levelId != ''">
+				and level_id = #{params.levelId} 
+			</if>
+			<if test="params.level != null and params.level != ''">
+				and level = #{params.level} 
+			</if>
+			<if test="params.telephone != null and params.telephone != ''">
+				and telephone = #{params.telephone} 
+			</if>
+			<if test="params.identityNumber != null and params.identityNumber != ''">
+				and identity_number = #{params.identityNumber} 
+			</if>
+
+			</if>
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from fire_man t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="FireMan">
+		select * from fire_man t
+		<include refid="where" />
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update fire_man t
+		<set>
+			<if test="examineUserid != null">
+				examine_userid = #{examineUserid}, 
+			</if>
+			<if test="examineUsername != null">
+				examine_username = #{examineUsername}, 
+			</if>
+			<if test="orgId != null">
+				org_id = #{orgId}, 
+			</if>
+			<if test="levelId != null">
+				level_id = #{levelId}, 
+			</if>
+			<if test="level != null">
+				level = #{level}, 
+			</if>
+			<if test="telephone != null">
+				telephone = #{telephone}, 
+			</if>
+			<if test="identityNumber != null">
+				identity_number = #{identityNumber}, 
+			</if>
+
+		</set>
+		where t.examine_userid = #{id}
+	</update>
+
+</mapper>

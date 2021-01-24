@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxbang.friday.dao.FireReviewerDao">
+
+	<sql id="where">
+		<where>
+			<if test="params != null">
+							<if test="params.reviewerId != null and params.reviewerId != ''">
+				and reviewer_id = #{params.reviewerId} 
+			</if>
+			<if test="params.reviewerName != null and params.reviewerName != ''">
+				and reviewer_name = #{params.reviewerName} 
+			</if>
+			<if test="params.sex != null and params.sex != ''">
+				and sex = #{params.sex} 
+			</if>
+			<if test="params.age != null and params.age != ''">
+				and age = #{params.age} 
+			</if>
+			<if test="params.times != null and params.times != ''">
+				and times = #{params.times} 
+			</if>
+			<if test="params.lastTime != null and params.lastTime != ''">
+				and last_time = #{params.lastTime} 
+			</if>
+
+			</if>
+		</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		select count(1) from fire_reviewer t
+		<include refid="where" />
+	</select>
+
+	<select id="list" resultType="FireReviewer">
+		select * from fire_reviewer t
+		<include refid="where" />
+		limit #{offset}, #{limit}
+	</select>
+
+	<update id="update">
+		update fire_reviewer t
+		<set>
+			<if test="reviewerId != null">
+				reviewer_id = #{reviewerId}, 
+			</if>
+			<if test="reviewerName != null">
+				reviewer_name = #{reviewerName}, 
+			</if>
+			<if test="sex != null">
+				sex = #{sex}, 
+			</if>
+			<if test="age != null">
+				age = #{age}, 
+			</if>
+			<if test="times != null">
+				times = #{times}, 
+			</if>
+			<if test="lastTime != null">
+				last_time = #{lastTime}, 
+			</if>
+
+		</set>
+		where t.reviewer_id = #{reviewerId}
+	</update>
+
+</mapper>

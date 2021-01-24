@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>reportCardSearch</title>
+</head>
+
+<body>
+</body>
+</html>
+
+<script type="text/javascript">
+	layui.use('table',function(){
+		var table=layui.table,
+			form=layui.form;
+		table.render({
+			elem:'#table',
+			url:'/repordCard/'+,
+			page:true,
+			response:{
+				countName:'count',
+				dataName:'datas'
+			},
+			cols:[
+			[
+			{field:'studentName',title:'学生姓名'},
+			{field:'testNo',title:'准考证号'},
+			{field:'testName',title:'考试名称'},
+			{field:'testTime',title:'考试时间'},
+			{field:'testResult',title:'成绩结果'},
+			{fixed:'right',title:'查看详细信息',toolbar:'#barDemo',width:150}
+			]
+			]
+		})
+	});
+</script>
