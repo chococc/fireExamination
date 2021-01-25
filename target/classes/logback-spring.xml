@@ -47,7 +47,7 @@
         <connectionSource class="ch.qos.logback.core.db.DataSourceConnectionSource">
             <!--连接池 -->
             <dataSource class="org.apache.commons.dbcp.BasicDataSource">
-                <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
                 <url>jdbc:mysql://localhost:3306/sxb-base?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true&amp;useSSL=false&amp;serverTimezone=UTC</url>
                 <username>root</username>
                 <password>12345678</password>
