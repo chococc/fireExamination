@@ -1381,3 +1381,102 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@56:16 - RuntimeException in A
 2021-01-24 09:57:18.081 [main] INFO  com.sxbang.friday.FridayApplicationTests - Started FridayApplicationTests in 8.311 seconds (JVM running for 9.323)
 2021-01-24 09:57:18.804 [Thread-3] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2021-01-24 09:57:18.815 [Thread-3] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-01-24 19:48:14.292 [restartedMain] INFO  com.sxbang.friday.FridayApplication - Starting FridayApplication on DESKTOP-7BF8DBQ with PID 27668 (D:\JAVA\friday\target\classes started by liuka in D:\JAVA\friday)
+2021-01-24 19:48:14.334 [restartedMain] INFO  com.sxbang.friday.FridayApplication - The following profiles are active: dev
+2021-01-24 19:48:14.376 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-24 19:48:14.382 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-24 19:48:15.726 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-01-24 19:48:15.737 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-01-24 19:48:15.778 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2021-01-24 19:48:16.221 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$13ac7142] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.237 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7afea908] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.262 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.270 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7f08341c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.282 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$388113f4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.292 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.322 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jedisPoolConfig' of type [redis.clients.jedis.JedisPoolConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.350 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jedisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.368 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.sxbang.friday.config.RedisConfig$$EnhancerBySpringCGLIB$$b2140ae9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-24 19:48:16.930 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-01-24 19:48:16.953 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-24 19:48:16.969 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-01-24 19:48:16.976 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2021-01-24 19:48:17.157 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-01-24 19:48:17.167 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2779 ms
+2021-01-24 19:48:17.542 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-01-24 19:48:18.699 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-01-24 19:48:18.831 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-24 19:48:18.905 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-01-24 19:48:19.025 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2021-01-24 19:48:19.348 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@376c5b89, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ddddd73, org.springframework.security.web.header.HeaderWriterFilter@77eac36a, org.springframework.security.web.authentication.logout.LogoutFilter@53c3d582, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51d9f1de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e54a42, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d36ad8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26d171c5, org.springframework.security.web.session.SessionManagementFilter@65c2145f, org.springframework.security.web.access.ExceptionTranslationFilter@22c672da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@457e3b8f]
+2021-01-24 19:48:19.532 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-01-24 19:48:19.580 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-01-24 19:48:19.636 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-01-24 19:48:19.878 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addUserUsingGET_1
+2021-01-24 19:48:19.888 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_1
+2021-01-24 19:48:19.898 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_1
+2021-01-24 19:48:19.912 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_1
+2021-01-24 19:48:19.921 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_1
+2021-01-24 19:48:19.930 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_1
+2021-01-24 19:48:19.936 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_1
+2021-01-24 19:48:19.947 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_2
+2021-01-24 19:48:19.954 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_2
+2021-01-24 19:48:19.964 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_2
+2021-01-24 19:48:19.972 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingPOST_1
+2021-01-24 19:48:19.980 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_2
+2021-01-24 19:48:19.987 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_2
+2021-01-24 19:48:19.994 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_2
+2021-01-24 19:48:20.006 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_3
+2021-01-24 19:48:20.014 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_3
+2021-01-24 19:48:20.028 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_3
+2021-01-24 19:48:20.036 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_3
+2021-01-24 19:48:20.044 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_3
+2021-01-24 19:48:20.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_3
+2021-01-24 19:48:20.064 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_4
+2021-01-24 19:48:20.072 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_4
+2021-01-24 19:48:20.082 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_4
+2021-01-24 19:48:20.089 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_4
+2021-01-24 19:48:20.095 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_4
+2021-01-24 19:48:20.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_4
+2021-01-24 19:48:20.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_5
+2021-01-24 19:48:20.126 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_5
+2021-01-24 19:48:20.138 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_5
+2021-01-24 19:48:20.146 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingPOST_2
+2021-01-24 19:48:20.154 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_5
+2021-01-24 19:48:20.163 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_5
+2021-01-24 19:48:20.170 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_5
+2021-01-24 19:48:20.180 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_6
+2021-01-24 19:48:20.186 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_6
+2021-01-24 19:48:20.196 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_6
+2021-01-24 19:48:20.202 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_6
+2021-01-24 19:48:20.209 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_6
+2021-01-24 19:48:20.215 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_6
+2021-01-24 19:48:20.229 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_7
+2021-01-24 19:48:20.242 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingGET_7
+2021-01-24 19:48:20.252 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getUsingGET_7
+2021-01-24 19:48:20.262 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_7
+2021-01-24 19:48:20.269 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: roleEditUsingGET_7
+2021-01-24 19:48:20.275 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_8
+2021-01-24 19:48:20.281 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updateUsingPOST_7
+2021-01-24 19:48:20.343 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_8
+2021-01-24 19:48:20.361 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_9
+2021-01-24 19:48:20.371 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: listUsingGET_10
+2021-01-24 19:48:20.390 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: payExamineUsingPOST_1
+2021-01-24 19:48:20.422 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-01-24 19:48:20.455 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-24 19:48:20.464 [restartedMain] INFO  com.sxbang.friday.config.ServerConfig - Get WebServer port 8080
+2021-01-24 19:48:20.471 [restartedMain] INFO  com.sxbang.friday.FridayApplication - Started FridayApplication in 6.908 seconds (JVM running for 8.812)
+2021-01-24 19:54:48.401 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-24 19:54:48.412 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-01-24 19:54:48.431 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2021-01-24 19:54:52.642 [http-nio-8080-exec-1] INFO  c.s.f.s.a.MyAuthenticationSuccessHandler - 登陆成功
+2021-01-24 19:54:53.625 [http-nio-8080-exec-3] INFO  com.sxbang.friday.controller.api.ApiController - 打开的页面是:user/user-list
+2021-01-24 19:54:53.688 [http-nio-8080-exec-5] INFO  c.sxbang.friday.service.impl.PermissionServiceImpl - com.sxbang.friday.service.impl.PermissionServiceImpl.setPermissionsTree(?,?,?)
+2021-01-24 19:55:04.248 [http-nio-8080-exec-1] INFO  c.s.f.s.a.MyAuthenticationSuccessHandler - 登陆成功
+2021-01-24 19:55:05.136 [http-nio-8080-exec-2] INFO  com.sxbang.friday.controller.api.ApiController - 打开的页面是:user/user-list
+2021-01-24 19:55:05.177 [http-nio-8080-exec-3] INFO  c.sxbang.friday.service.impl.PermissionServiceImpl - com.sxbang.friday.service.impl.PermissionServiceImpl.setPermissionsTree(?,?,?)
+2021-01-24 19:55:07.284 [http-nio-8080-exec-5] INFO  com.sxbang.friday.controller.api.ApiController - 打开的页面是:studentPay/studentPayList
+2021-01-24 19:59:09.120 [http-nio-8080-exec-2] INFO  c.s.f.s.a.MyAuthenticationSuccessHandler - 登陆成功
+2021-01-24 19:59:10.137 [http-nio-8080-exec-9] INFO  com.sxbang.friday.controller.api.ApiController - 打开的页面是:user/user-list
+2021-01-24 19:59:10.219 [http-nio-8080-exec-8] INFO  c.sxbang.friday.service.impl.PermissionServiceImpl - com.sxbang.friday.service.impl.PermissionServiceImpl.setPermissionsTree(?,?,?)
+2021-01-24 19:59:10.426 [http-nio-8080-exec-5] INFO  com.sxbang.friday.controller.api.ApiController - 打开的页面是:studentPay/studentPayList
